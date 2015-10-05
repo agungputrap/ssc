@@ -42,7 +42,7 @@ class DashboardController extends Controller
 	}
 	*/
 	public function actionIndex() {
-		echo"masuk sini bang";die;
+		echo"sama abang aja deh ";die;
 		$dataRender = array(
 			
 		);
