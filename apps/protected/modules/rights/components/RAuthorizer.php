@@ -294,10 +294,13 @@ class RAuthorizer extends CApplicationComponent
 		$userClass = Rights::module()->userClass;
 		$users = CActiveRecord::model($userClass)->findAll($criteria);
 		$users = $this->attachUserBehavior($users);
-
+		//percobaan
+		$userNameCol = Rights::module()->userNameColumn;
+		//
 		$superusers = array();
 		foreach( $users as $user )
-			$superusers[] = $user->name;
+			//$superusers[] = $user->name;
+			$superusers[] = $user->username;
 
 		// Make sure that we have superusers, otherwise we would allow full access to Rights
 		// if there for some reason is not any superusers.
