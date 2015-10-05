@@ -42,12 +42,11 @@ class DashboardController extends Controller
 	}
 	*/
 	public function actionIndex() {
-		echo"sama abang aja deh ";die;
 		$dataRender = array(
 			
 		);
-		$this->layout = "login_layout";
-		$this->pageTitle = "Halaman Login";
+		$this->layout = "main-simple";
+		$this->pageTitle = "Dashboard";
 		$renderView = "home";
 		$this->render($renderView,
 			array(
