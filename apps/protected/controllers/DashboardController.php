@@ -1,6 +1,6 @@
 <?php
 
-class SiteController extends Controller
+class DashboardController extends Controller
 {
 
 	public function actionError()
@@ -41,30 +41,10 @@ class SiteController extends Controller
 		);
 	}
 	*/
-	public function actionLogin() {
-
-		$model=new LoginForm;
-
-		// if it is ajax validation request
-		if(isset($_POST['ajax']) && $_POST['ajax']==='login-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
-
-		// collect user input data
-		if(isset($_POST['LoginForm']))
-		{
-			$model->attributes=$_POST['LoginForm'];
-			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login())
-				$this->redirect(array('dashboard/index'));
-		}
-		//display login form
-		//$this->render('login',array('model'=>$model));
-		
+	public function actionIndex() {
+		echo"masuk sini bang";die;
 		$dataRender = array(
-			'model'=>$model,
+			
 		);
 		$this->layout = "login_layout";
 		$this->pageTitle = "Halaman Login";
@@ -74,6 +54,5 @@ class SiteController extends Controller
 				'dataRender'=>$dataRender
 			)
 		);
-		
 	}
 }
